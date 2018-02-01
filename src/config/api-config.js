@@ -3,13 +3,21 @@
  * @type {{ name : {path: string, method: string} }}
  */
 const common = {
-  serveRecord: {
-    path: 'getServeRecord.do',
+  getPaperId: {
+    path: 'paper/id.do',
     method: 'GET'
   },
-  expenseRecord: {
-    path: 'getExpenseRecord.do',
+  getProblem: {
+    path: 'questions.do',
     method: 'GET'
+  },
+  handin: {
+    path: 'paper/handin.do',
+    method: 'POST'
+  },
+  score: {
+    path: 'answer/result.do',
+    method: 'POST'
   }
 }
 

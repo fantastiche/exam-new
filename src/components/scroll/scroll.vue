@@ -45,13 +45,13 @@
         default: DIRECTION_V
       }
     },
-    mounted() {
+    mounted: function () {
       setTimeout(() => {
         this._initScroll()
       }, 20)
     },
     methods: {
-      _initScroll() {
+      _initScroll: function () {
         if (!this.$refs.wrapper) {
           return
         }
@@ -81,24 +81,24 @@
           })
         }
       },
-      disable() {
+      disable: function () {
         this.scroll && this.scroll.disable()
       },
-      enable() {
+      enable: function () {
         this.scroll && this.scroll.enable()
       },
-      refresh() {
+      refresh: function () {
         this.scroll && this.scroll.refresh()
       },
-      scrollTo() {
+      scrollTo: function () {
         this.scroll && this.scroll.scrollTo.apply(this.scroll, arguments)
       },
-      scrollToElement() {
+      scrollToElement: function () {
         this.scroll && this.scroll.scrollToElement.apply(this.scroll, arguments)
       }
     },
     watch: {
-      data() {
+      data: function () {
         setTimeout(() => {
           this.refresh()
         }, this.refreshDelay)
@@ -107,6 +107,6 @@
   }
 </script>
 
-<style scoped lang="stylus" rel="stylesheet/stylus">
+<style lang="less" type="text/less" scoped>
 
 </style>

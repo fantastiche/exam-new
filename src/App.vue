@@ -8,10 +8,14 @@
   export default {
     name: 'app',
     created: function () {
-      if (!localStorage.getItem('OPENID')) {
-        let openId = location.href.split('?')[1].split('=')[1]
-        localStorage.setItem('OPENID', openId)
-      }
+      let SHOPCODE = location.href.split('?')[1].split('&')[0].split('=')[1]
+      let USERID = location.href.split('?')[1].split('&')[1].split('=')[1]
+      let LEVEL = location.href.split('?')[1].split('&')[2].split('=')[1]
+      let CATALOGUE = location.href.split('?')[1].split('&')[3].split('=')[1]
+      localStorage.setItem('SHOPCODE', SHOPCODE)
+      localStorage.setItem('USERID', USERID)
+      localStorage.setItem('LEVEL', LEVEL)
+      localStorage.setItem('CATALOGUE', CATALOGUE)
     }
   }
 </script>
@@ -32,7 +36,9 @@
   }
 
   #app {
+    width: 100%;
     height: 100%;
+    background: #ffffff;
   }
 
   body {
